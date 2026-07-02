@@ -88,7 +88,7 @@ export default function TiltCard({
       />
       
       {/* Inner wrapper to add depth to children */}
-      <div className="h-full w-full rounded-[inherit] overflow-hidden border border-gold/10 group-hover:border-gold/30 transition-colors duration-300">
+      <div className="relative h-full w-full rounded-[inherit] overflow-hidden border border-gold/10 group-hover:border-gold/30 transition-colors duration-300">
         {children}
       </div>
     </motion.div>

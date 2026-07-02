@@ -68,7 +68,8 @@ export default function Achievements() {
 
             {/* Milestones Loop */}
             <div className="flex flex-col gap-12 md:gap-20">
-              {TIMELINE_MILESTONES.map((milestone, idx) => {
+              {TIMELINE_MILESTONES.map((milestoneItem, idx) => {
+                const milestone = milestoneItem as any;
                 const isEven = idx % 2 === 0;
                 return (
                   <div
@@ -84,11 +85,17 @@ export default function Achievements() {
 
                     {/* Timeline Card */}
                     <motion.div
-                      initial={{ opacity: 0, x: isEven ? 30 : -30, y: 15 }}
-                      whileInView={{ opacity: 1, x: 0, y: 0 }}
-                      viewport={{ once: true, margin: "-15%" }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                      className={`ml-10 md:ml-0 w-[calc(100%-2.5rem)] md:w-[45%] glass p-6 rounded-2xl hover:border-gold/30 transition-colors duration-300 shadow-md group`}
+                      initial={{ opacity: 0, x: isEven ? 35 : -35, y: 15 }}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        boxShadow: "0px 4px 20px rgba(212, 175, 55, 0.12)",
+                        borderColor: "rgba(212, 175, 55, 0.35)",
+                      }}
+                      viewport={{ once: true, margin: "-10%" }}
+                      transition={{ duration: 0.6, delay: 0.05 }}
+                      className="ml-10 md:ml-0 w-[calc(100%-2.5rem)] md:w-[45%] glass p-6 rounded-2xl border border-gold/10 hover:border-gold/50 hover:shadow-[0_0_22px_rgba(212,175,55,0.22)] transition-all duration-500 shadow-md group relative"
                     >
                       <div className="flex justify-between items-center mb-3">
                         <span className="font-outfit text-gold font-extrabold text-lg tracking-wider">
@@ -98,12 +105,32 @@ export default function Achievements() {
                           {milestone.badge}
                         </span>
                       </div>
-                      <h3 className="font-outfit text-white font-bold text-lg md:text-xl mb-2 group-hover:text-gold transition-colors duration-300">
+
+                      <h3 className="font-outfit text-white font-bold text-lg md:text-xl mb-1 group-hover:text-gold transition-colors duration-300">
                         {milestone.title}
                       </h3>
-                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
+
+                      {milestone.subtitle && (
+                        <h4 className="text-gold text-xs font-semibold mb-3 tracking-wide uppercase">
+                          {milestone.subtitle}
+                        </h4>
+                      )}
+
+                      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-4">
                         {milestone.description}
                       </p>
+
+                      {milestone.website && (
+                        <a
+                          href={milestone.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs text-gold font-bold uppercase tracking-wider hover:text-white transition-colors duration-300"
+                        >
+                          <span>Visit Website</span>
+                          <span className="text-[10px]">&rarr;</span>
+                        </a>
+                      )}
                     </motion.div>
                   </div>
                 );

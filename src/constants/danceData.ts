@@ -107,40 +107,78 @@ export const SERVICES = [
 
 export const TIMELINE_MILESTONES = [
   {
-    year: "Education",
-    title: "Schooling & Pre-University",
-    description: "Completed 10th from Shanthidhama, Bangalore, and 12th from Kengeri Pre-University College, Bangalore.",
-    badge: "Bangalore"
+    year: "2012",
+    title: "Started Dance Journey",
+    description: "Began training in classical and contemporary dance forms, developing precision, flexibility, and expressive storytelling.",
+    badge: "Foundation"
   },
   {
-    year: "Training",
-    title: "Industrial Training Institute (ITI)",
-    description: "Earned ITI qualification from Tumkur Road Government College, Bangalore, developing a strong analytical and work ethic.",
-    badge: "Higher Education"
+    year: "2014",
+    title: "Professional Dance Training",
+    description: "Deepened expertise in commercial Bollywood, hip-hop styles, aerobics, and stage choreography compositions.",
+    badge: "Training"
   },
   {
-    year: "Teaching",
-    title: "New Heartbeat Indian Public School",
-    description: "Worked as Dance Instructor for 3 years, choreographing Western, Freestyle, Filmy Folk, Bollywood, and Semi-Contemporary routines.",
-    badge: "Instructor"
+    year: "2016",
+    title: "Dance Instructor & Choreographer",
+    subtitle: "New Heartbeat Indian Public School",
+    description: "Worked as Dance Instructor for 3 years, choreographing Western, Freestyle, Filmy Folk, Bollywood, Locking & Popping, and Semi-Contemporary routines.",
+    badge: "3 Years"
   },
   {
-    year: "TV Stages",
-    title: "Television Dance Landmark",
-    description: "Participated as performer in Dhee 6 (Telugu) as Co-Assistant and Contestant in Master Dancer (Colors Super).",
+    year: "2019",
+    title: "Dance Instructor & Choreographer",
+    subtitle: "Agasthya Vidyanikethan School",
+    description: "Teach dance techniques, foster creativity, and choreograph performances for school functions, cultural festivals, and annual days.",
+    badge: "Part-time"
+  },
+  {
+    year: "Present",
+    title: "Currently Working As",
+    subtitle: "Royal Public School",
+    description: "Inspiring students through choreography, stage performances, annual day programs, and creative dance education.",
+    website: "https://www.royalpublicschool.in/",
+    badge: "Active Coach"
+  },
+  {
+    year: "Present",
+    title: "Currently Working As",
+    subtitle: "Arwin Vidya Mandira",
+    description: "Training students in various dance styles and preparing them for school events, cultural programs, and stage performances.",
+    website: "https://www.arwinvidyamandira.com/",
+    badge: "Active Coach"
+  },
+  {
+    year: "Present",
+    title: "Currently Working As",
+    subtitle: "Sri Lakshmi Public School",
+    description: "Mentoring students through structured dance training, choreography, and performance development.",
+    website: "https://www.srilakshmipublicschool.com/",
+    badge: "Active Coach"
+  },
+  {
+    year: "Spotlight",
+    title: "Reality Show Performances",
+    description: "Participated as performer in Telugu Dhee 6 (Co-Assistant), contestant on Master Dancer (Colors Super), Dhee Juniors 1 & 2, and others.",
     badge: "Television"
   },
   {
-    year: "Choreography",
-    title: "Star & Celebrity Training",
-    description: "Trained students for 'Dancing Star' Seasons 1, 2 & 3 and worked with Kannada and Hindi television celebrities for award galas.",
-    badge: "Celebrity Coach"
+    year: "Live Stage",
+    title: "Celebrity Stage Performances",
+    description: "Collaborated with Kannada and Hindi television celebrities for Zee Kutumba Awards, Suvarna Parivara Awards, and Dancing Star.",
+    badge: "Gala Stage"
   },
   {
-    year: "Current",
-    title: "Agasthya Vidyanikethan School",
-    description: "Active part-time Dance Instructor & Choreographer, directing school annual functions, sangeets, and corporate performances.",
-    badge: "Director"
+    year: "Events",
+    title: "Wedding & Event Choreography",
+    description: "Specialized in luxury couples choreography, massive sangeet concepts, school functions, and corporate brand presentations.",
+    badge: "Designer Sangeet"
+  },
+  {
+    year: "Present",
+    title: "Current Professional Journey",
+    description: "Directing Shiv's Cultural Academy in Bangalore, mentoring students through structured training, and leading creative dance productions.",
+    badge: "Academy Director"
   }
 ];
 

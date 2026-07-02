@@ -8,6 +8,7 @@ import PageBanner from "@/components/common/PageBanner";
 import SectionHeading from "@/components/common/SectionHeading";
 import Button from "@/components/common/Button";
 import { SERVICES, GALLERY_IMAGES } from "@/constants/danceData";
+import TrainingBranches from "@/components/services/TrainingBranches";
 
 export default function ServicesPage() {
   const [showAllShowcase, setShowAllShowcase] = useState(false);
@@ -129,8 +130,13 @@ export default function ServicesPage() {
             ))}
           </div>
         </section>
+      </div>
 
-        {/* 2. PERFORMANCE SHOWCASE */}
+      {/* 2. SHIVOM CULTURAL ACADEMY */}
+      <TrainingBranches />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24">
+        {/* 3. PERFORMANCE SHOWCASE */}
         <section className="bg-dark-card border border-gold/10 p-8 md:p-12 rounded-3xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-[200px] h-[200px] bg-gold/3 rounded-full filter blur-[80px]" />
 

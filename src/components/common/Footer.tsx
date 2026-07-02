@@ -27,6 +27,7 @@ export default function Footer() {
                   src="/assets/logo.jpg"
                   alt="Shivaraj S Logo"
                   fill
+                  sizes="48px"
                   className="object-cover"
                 />
               </div>
@@ -78,24 +79,34 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-zinc-400 text-sm">
                 <Phone size={16} className="text-gold mt-0.5 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+918217705531" className="hover:text-white transition-colors duration-300">
+                  <a
+                    href="tel:+918217705531"
+                    className="hover:text-white transition-colors duration-300"
+                  >
                     +91 82177 05531
                   </a>
-                  <a href="tel:+919980455040" className="hover:text-white transition-colors duration-300">
+                  <a
+                    href="tel:+919980455040"
+                    className="hover:text-white transition-colors duration-300"
+                  >
                     +91 99804 55040
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-zinc-400 text-sm">
                 <Mail size={16} className="text-gold mt-0.5 flex-shrink-0" />
-                <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:text-white transition-colors duration-300 break-all">
+                <a
+                  href={`mailto:${PERSONAL_INFO.email}`}
+                  className="hover:text-white transition-colors duration-300 break-all"
+                >
                   {PERSONAL_INFO.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-zinc-400 text-sm">
                 <MapPin size={16} className="text-gold mt-0.5 flex-shrink-0" />
                 <span>
-                  #26, 1st main, 2nd cross Ashwath Nagar,<br />
+                  #26, 1st main, 2nd cross Ashwath Nagar,
+                  <br />
                   Sunkadakatte, Bangalore-91
                 </span>
               </li>
@@ -111,17 +122,17 @@ export default function Footer() {
               {[
                 {
                   icon: <FaInstagram size={18} />,
-                  href: SOCIAL_LINKS.instagram,
+                  href: "https://www.instagram.com/officialshivarajmaster?utm_source=qr&igsh=d29xOTU3cjNkeTc3",
                   label: "Instagram",
                 },
                 {
                   icon: <FaFacebookF size={18} />,
-                  href: SOCIAL_LINKS.facebook,
+                  href: "https://www.facebook.com/share/1EbW6dAAFh/",
                   label: "Facebook",
                 },
                 {
                   icon: <FaYoutube size={18} />,
-                  href: "https://www.youtube.com/@shivsculturalacademy9885",
+                  href: "https://www.youtube.com/@ShivrajMaster",
                   label: "YouTube",
                 },
               ].map((soc, idx) => (
@@ -143,19 +154,22 @@ export default function Footer() {
         <hr className="border-gold/10 my-8" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>
-            &copy; 2026 Shivaraj S. All Rights Reserved.
-          </p>
+          <p>&copy; 2026 Shivaraj S. All Rights Reserved.</p>
           <div className="flex items-center gap-1.5">
             <span>Designed & Developed by</span>
-            <span className="text-gold font-semibold tracking-wide">Yashwanth Suresh</span>
+            <span className="text-gold font-semibold tracking-wide">
+              Yashwanth Suresh
+            </span>
           </div>
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-gold hover:text-white hover:border-gold hover:bg-gold/10 transition-all duration-300 group shadow-[0_0_8px_rgba(212,175,55,0.05)]"
             title="Back to Top"
           >
-            <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform duration-300" />
+            <ArrowUp
+              size={16}
+              className="group-hover:-translate-y-1 transition-transform duration-300"
+            />
           </button>
         </div>
       </div>

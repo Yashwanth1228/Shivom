@@ -128,7 +128,7 @@ export default function Home() {
               {/* 3D Tilt Card containing Hero Portrait */}
               <TiltCard className="w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-gold/15 glow-gold-sm">
                 <Image
-                  src="/assets/hero-portrait.jpg"
+                  src="/assets/checked-portrait.jpg"
                   alt="Shivaraj S Portrait holding a glowing sphere"
                   fill
                   sizes="(max-width: 768px) 100vw, 420px"

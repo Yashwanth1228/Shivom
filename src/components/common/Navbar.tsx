@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { clsx } from "clsx";
+import Button from "@/components/common/Button";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -57,6 +58,7 @@ export default function Navbar() {
                 src="/assets/logo.jpg"
                 alt="Shivaraj S Logo"
                 fill
+                sizes="40px"
                 className="object-cover"
               />
             </div>
@@ -104,13 +106,13 @@ export default function Navbar() {
 
           {/* Call To Action Button (Desktop) */}
           <div className="hidden md:block">
-            <Link
+            <Button
               href="/contact"
-              className="relative px-6 py-2.5 rounded-full font-outfit text-xs tracking-widest uppercase border border-gold/40 text-white hover:text-dark-bg overflow-hidden group transition-all duration-500"
+              variant="outline"
+              className="py-2.5! px-6! text-[10px]! tracking-widest! hover:bg-gold! hover:text-dark-bg! hover:border-gold! hover:shadow-[0_0_20px_rgba(212,175,55,0.45)]!"
             >
-              <span className="absolute inset-0 bg-gold translate-y-[102%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
-              <span className="relative z-10">Book Now</span>
-            </Link>
+              Book Now
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
