@@ -7,14 +7,14 @@ import { Sparkles, Calendar, BookOpen, Music, Check, ChevronDown, ChevronUp } fr
 import PageBanner from "@/components/common/PageBanner";
 import SectionHeading from "@/components/common/SectionHeading";
 import Button from "@/components/common/Button";
-import { SERVICES, GALLERY_IMAGES } from "@/constants/danceData";
+import { SERVICES, SERVICES_GALLERY } from "@/constants/danceData";
 import TrainingBranches from "@/components/services/TrainingBranches";
 
 export default function ServicesPage() {
   const [showAllShowcase, setShowAllShowcase] = useState(false);
 
-  // Performance Images (using centralized gallery images)
-  const displayedShowcase = showAllShowcase ? GALLERY_IMAGES : GALLERY_IMAGES.slice(0, 6);
+  // Performance Images (using decoupled services gallery)
+  const displayedShowcase = showAllShowcase ? SERVICES_GALLERY : SERVICES_GALLERY.slice(0, 6);
 
   const getServiceIcon = (id: string) => {
     switch (id) {

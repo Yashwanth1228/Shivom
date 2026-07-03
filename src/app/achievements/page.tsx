@@ -3,22 +3,32 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Award, Star, Tv, Heart, Users, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Award,
+  Star,
+  Tv,
+  Heart,
+  Users,
+  Briefcase,
+  ChevronDown,
+  ChevronUp,
+  GraduationCap,
+} from "lucide-react";
 import PageBanner from "@/components/common/PageBanner";
 import SectionHeading from "@/components/common/SectionHeading";
 import Button from "@/components/common/Button";
 import {
   TIMELINE_MILESTONES,
   REALITY_SHOWS,
-  GALLERY_IMAGES,
+  ACHIEVEMENTS_GALLERY,
 } from "@/constants/danceData";
 
 export default function Achievements() {
   const [showAllGallery, setShowAllGallery] = useState(false);
-  
+
   // Timeline container ref for scroll-drawing line
   const timelineRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start center", "end center"],
@@ -31,7 +41,9 @@ export default function Achievements() {
   });
 
   // Toggle see more gallery
-  const displayedGallery = showAllGallery ? GALLERY_IMAGES : GALLERY_IMAGES.slice(0, 6);
+  const displayedGallery = showAllGallery
+    ? ACHIEVEMENTS_GALLERY
+    : ACHIEVEMENTS_GALLERY.slice(0, 6);
 
   return (
     <div className="relative overflow-hidden bg-dark-bg min-h-screen">
@@ -47,7 +59,6 @@ export default function Achievements() {
       />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col gap-24">
-        
         {/* 1. PROFESSIONAL TIMELINE */}
         <section>
           <SectionHeading
@@ -56,10 +67,13 @@ export default function Achievements() {
             badge="Career Journey"
           />
 
-          <div ref={timelineRef} className="relative w-full max-w-4xl mx-auto mt-16 pb-12">
+          <div
+            ref={timelineRef}
+            className="relative w-full max-w-4xl mx-auto mt-16 pb-12"
+          >
             {/* Center Line for Desktop, Left Line for Mobile */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2" />
-            
+
             {/* Drawing Line */}
             <motion.div
               style={{ scaleY }}
@@ -111,9 +125,27 @@ export default function Achievements() {
                       </h3>
 
                       {milestone.subtitle && (
-                        <h4 className="text-gold text-xs font-semibold mb-3 tracking-wide uppercase">
-                          {milestone.subtitle}
-                        </h4>
+                        <div className="flex items-center gap-2.5 mb-3">
+                          {milestone.logo ? (
+                            <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white/5 border border-white/10 flex-shrink-0 flex items-center justify-center p-0.5">
+                              <Image
+                                src={milestone.logo}
+                                alt={milestone.subtitle}
+                                fill
+                                sizes="32px"
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : milestone.title.includes("Instructor") ||
+                            milestone.title.includes("Working As") ? (
+                            <div className="w-8 h-8 rounded-lg bg-gold/5 border border-gold/20 flex-shrink-0 flex items-center justify-center text-gold">
+                              <GraduationCap size={15} />
+                            </div>
+                          ) : null}
+                          <h4 className="text-gold text-xs font-bold tracking-wide uppercase">
+                            {milestone.subtitle}
+                          </h4>
+                        </div>
                       )}
 
                       <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-4">
@@ -136,7 +168,6 @@ export default function Achievements() {
                 );
               })}
             </div>
-
           </div>
         </section>
 
@@ -251,7 +282,7 @@ export default function Achievements() {
         {/* 4. PERFORMANCE GALLERY */}
         <section className="bg-dark-card border border-gold/10 p-8 md:p-12 rounded-3xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-gold/3 rounded-full filter blur-[80px]" />
-          
+
           <SectionHeading
             title="Performance Gallery"
             subtitle="Visual showcases of dance sequences, academy workshops, and television recordings."
@@ -275,7 +306,7 @@ export default function Achievements() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 350px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
-                
+
                 {/* Glow border overlay */}
                 <div className="absolute inset-0 border border-transparent group-hover:border-gold/35 rounded-2xl pointer-events-none transition-colors duration-300" />
               </motion.div>
@@ -300,7 +331,6 @@ export default function Achievements() {
             </Button>
           </div>
         </section>
-
       </div>
     </div>
   );

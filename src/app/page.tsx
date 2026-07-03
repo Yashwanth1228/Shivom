@@ -16,6 +16,7 @@ import {
   FEATURED_ACHIEVEMENTS,
   SERVICES,
 } from "@/constants/danceData";
+import TrustedSchools from "@/components/home/TrustedSchools";
 
 export default function Home() {
   // Tagline word reveal animation
@@ -52,10 +53,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-5"
             >
-              <span className="h-px w-8 bg-gold glow-gold-sm" />
-              <span className="font-outfit text-xs md:text-sm font-extrabold tracking-[0.25em] text-gold uppercase">
+              <span className="h-[4px] w-20 bg-gold glow-gold-sm" />
+              <span className="font-outfit text-xl md:text-3xl font-black tracking-[0.25em] text-gold uppercase">
                 Hello, I'm
               </span>
             </motion.div>
@@ -221,6 +222,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* TRUSTED BY LEADING SCHOOLS */}
+      <TrustedSchools />
 
       {/* 3. DANCE STYLES SECTION */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
