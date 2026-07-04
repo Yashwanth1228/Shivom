@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import { ArrowUp, Mail, Phone, MapPin } from "lucide-react";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/constants/danceData";
+import DeveloperModal from "@/components/common/DeveloperModal";
 
 export default function Footer() {
+  const [isDevModalOpen, setIsDevModalOpen] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -155,11 +159,18 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>&copy; 2026 Shivaraj S. All Rights Reserved.</p>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1 font-medium">
             <span>Designed & Developed by</span>
-            <span className="text-gold font-semibold tracking-wide">
-              Yashwanth Suresh
-            </span>
+            <button
+              onClick={() => setIsDevModalOpen(true)}
+              className="text-gold font-bold tracking-wide transition-all duration-300 relative group cursor-pointer flex items-center gap-0.5 select-none hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] bg-transparent border-none p-0 outline-none pb-0.5"
+            >
+              <span>Yashwanth Suresh</span>
+              <span className="inline-block translate-y-0.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-[10px]">
+                ↗
+              </span>
+              <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+            </button>
           </div>
           <button
             onClick={scrollToTop}
@@ -173,6 +184,7 @@ export default function Footer() {
           </button>
         </div>
       </div>
+      <DeveloperModal isOpen={isDevModalOpen} onClose={() => setIsDevModalOpen(false)} />
     </footer>
   );
 }
