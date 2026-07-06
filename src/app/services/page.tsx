@@ -88,7 +88,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Image block */}
-                    <div className="md:col-span-5 relative aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden border border-gold/10">
+                    <div className="md:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-gold/10">
                       <Image
                         src={srv.image}
                         alt={srv.title}
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 key={idx}
-                className="relative aspect-video sm:aspect-square rounded-2xl overflow-hidden border border-gold/10 group cursor-pointer shadow-md"
+                className="relative aspect-square rounded-2xl overflow-hidden border border-gold/10 group cursor-pointer shadow-md"
               >
                 <Image
                   src={img}

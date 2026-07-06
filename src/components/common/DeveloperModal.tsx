@@ -137,7 +137,7 @@ export default function DeveloperModal({ isOpen, onClose }: DeveloperModalProps)
                     icon={MessageCircle}
                     title="WhatsApp"
                     value={developer.whatsapp}
-                    href={`https://wa.me/${developer.whatsapp.replace(/[^0-9]/g, "")}`}
+                    href={`https://wa.me/${developer.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Yashwanth%2C%20I'd%20love%20to%20discuss%20a%20web%20development%20or%20freelance%20project!`}
                   />
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function DeveloperModal({ isOpen, onClose }: DeveloperModalProps)
               {/* 5. Bottom CTA Area */}
               <DeveloperCTA
                 portfolioUrl={developer.portfolio}
-                whatsappUrl={`https://wa.me/${developer.whatsapp.replace(/[^0-9]/g, "")}`}
+                whatsappUrl={`https://wa.me/${developer.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Yashwanth%2C%20I'd%20love%20to%20discuss%20a%20web%20development%20or%20freelance%20project!`}
               />
 
               {/* 6. Availability Status */}

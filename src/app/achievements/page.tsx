@@ -191,7 +191,7 @@ export default function Achievements() {
                   className="glass p-5 rounded-2xl flex flex-col sm:flex-row gap-5 hover:border-gold/30 transition-all duration-300 group shadow-md"
                 >
                   {/* Show image */}
-                  <div className="relative w-full sm:w-36 h-40 sm:h-auto aspect-video sm:aspect-square rounded-xl overflow-hidden flex-shrink-0 border border-gold/10">
+                  <div className="relative w-full sm:w-36 aspect-square rounded-xl overflow-hidden flex-shrink-0 border border-gold/10">
                     <Image
                       src={show.image}
                       alt={show.name}
@@ -297,7 +297,7 @@ export default function Achievements() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 key={idx}
-                className="relative aspect-video sm:aspect-square rounded-2xl overflow-hidden border border-gold/10 group cursor-pointer shadow-md"
+                className="relative aspect-square rounded-2xl overflow-hidden border border-gold/10 group cursor-pointer shadow-md"
               >
                 <Image
                   src={img}
