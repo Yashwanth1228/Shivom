@@ -320,6 +320,8 @@ export const SERVICES_GALLERY = [
   // "/assets/pic-24.jpg",
   "/assets/pic-31.jpg",
   "/assets/pic-32.jpg",
+  "/assets/pic-34.jpg",
+  "/assets/pic-35.jpg",
 ];
 
 export const ACHIEVEMENTS_GALLERY = [
@@ -337,6 +339,18 @@ export const ACHIEVEMENTS_GALLERY = [
   // "https://images.unsplash.com/photo-1505232458729-26417ff63c00?q=80&w=600&auto=format&fit=crop",
   // "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=600&auto=format&fit=crop",
   // "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop",
+];
+
+export const ACADEMY_GALLERY = [
+  "/assets/Aca-1.jpg",
+  "/assets/Aca-2.jpg",
+  "/assets/Aca-3.jpg",
+  "/assets/Aca-4.jpg",
+  // "/assets/pic-13.jpg",
+  // "/assets/pic-15.jpg",
+  // "/assets/pic-24.jpg",
+  // "/assets/pic-30.jpg",
+  // "/assets/pic-33.jpg",
 ];
 
 export const SOCIAL_LINKS = {

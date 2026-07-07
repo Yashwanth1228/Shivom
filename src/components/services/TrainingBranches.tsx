@@ -1,11 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { ACADEMY_GALLERY } from "@/constants/danceData";
 import { TRAINING_BRANCHES } from "@/data/trainingBranches";
+import Button from "@/components/common/Button";
 import BranchCard from "./BranchCard";
 
 export default function TrainingBranches() {
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedImages = showAll ? ACADEMY_GALLERY : ACADEMY_GALLERY.slice(0, 3);
+
   return (
     <section className="bg-dark-bg py-20 border-y border-gold/10 relative overflow-hidden">
       {/* Background visual overlays */}
@@ -99,6 +107,78 @@ export default function TrainingBranches() {
               <BranchCard branch={branch} />
             </motion.div>
           ))}
+        </div>
+
+        {/* Our Academy Spaces Gallery */}
+        <div className="mt-20 pt-16 border-t border-gold/10 w-full">
+          <div className="max-w-5xl mx-auto">
+            {/* Gallery Heading */}
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-outfit text-2xl md:text-3xl font-extrabold text-white uppercase tracking-tight leading-none mb-3"
+              >
+                Our Academy Spaces
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-zinc-400 text-xs md:text-sm font-medium"
+              >
+                Take a look inside our classroom studios, training workshops, and academy setups.
+              </motion.p>
+            </div>
+
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayedImages.map((img, idx) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  key={idx}
+                  className="relative aspect-square rounded-2xl overflow-hidden border border-gold/10 group cursor-pointer shadow-md"
+                >
+                  <Image
+                    src={img}
+                    alt={`Academy space photo ${idx + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  {/* Glow border overlay */}
+                  <div className="absolute inset-0 border border-transparent group-hover:border-gold/35 rounded-2xl pointer-events-none transition-colors duration-300" />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Toggle See More Button */}
+            {ACADEMY_GALLERY.length > 3 && (
+              <div className="text-center mt-10">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowAll(!showAll)}
+                  className="mx-auto"
+                >
+                  {showAll ? (
+                    <>
+                      See Less <ChevronUp size={16} />
+                    </>
+                  ) : (
+                    <>
+                      See More <ChevronDown size={16} />
+                    </>
+                  )}
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
 
       </div>
